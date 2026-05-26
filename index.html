@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ShopDirect - High Density Commerce</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#2d3131",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-surface": "#181c1d",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "on-surface-variant": "#414943",
+                      "on-error-container": "#93000a",
+                      "surface-tint": "#3a674e",
+                      "primary": "#002514",
+                      "error-container": "#ffdad6",
+                      "on-background": "#181c1d",
+                      "on-secondary-fixed": "#360f00",
+                      "tertiary-container": "#323434",
+                      "background": "#EAEDED", /* Adjusted background per prompt */
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-secondary": "#ffffff",
+                      "outline": "#717972",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#a1d2b3",
+                      "surface-bright": "#f7fafa",
+                      "surface-container-high": "#e6e9e9",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#bceece",
+                      "outline-variant": "#c1c9c1",
+                      "primary-container": "#0b3c26",
+                      "surface-container": "#ebeeee",
+                      "on-secondary-fixed-variant": "#7c2e00",
+                      "on-primary-fixed": "#002112",
+                      "secondary-container": "#fe6500",
+                      "surface-container-highest": "#e0e3e3",
+                      "on-error": "#ffffff",
+                      "inverse-primary": "#a1d2b3",
+                      "surface": "#ffffff", /* Cards pure white */
+                      "surface-variant": "#e0e3e3",
+                      "on-primary-container": "#ffffff", /* Changed for contrast */
+                      "surface-dim": "#d7dbdb",
+                      "error": "#ba1a1a",
+                      "secondary-fixed-dim": "#ffb596",
+                      "inverse-on-surface": "#eef1f1",
+                      "on-secondary-container": "#ffffff", /* Changed for contrast */
+                      "secondary": "#FF6600", /* Accent Orange */
+                      "surface-container-low": "#f1f4f4",
+                      "on-tertiary-container": "#9b9c9c",
+                      "on-primary-fixed-variant": "#224f38",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#1d1f1f",
+                      "secondary-fixed": "#ffdbcd"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "container-max": "1280px",
+                      "margin-desktop": "24px",
+                      "margin-mobile": "16px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .text-ellipsis-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .bg-hero-gradient {
+            background: linear-gradient(to bottom, transparent 60%, #EAEDED 100%);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ShopDirect Hub Naga",
+      "image": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
+      "@id": "",
+      "url": "https://www.shopdirect.com",
+      "telephone": "+1234567890",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Commerce Way",
+        "addressLocality": "Naga City",
+        "postalCode": "4400",
+        "addressCountry": "PH"
+      }
+    }
+    </script>
+</head>
+<body class="bg-background text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container shadow-md sticky top-0 z-50">
+<div class="flex flex-col w-full px-margin-desktop py-base max-w-container-max mx-auto">
+<div class="flex items-center justify-between gap-4 py-2">
+<!-- Brand Logo -->
+<div class="text-headline-md font-headline-lg font-bold text-on-primary whitespace-nowrap">
+                    ShopDirect
+                </div>
+<!-- Search Bar -->
+<div class="flex-1 max-w-3xl flex">
+<input class="w-full h-10 px-4 rounded-l border border-outline-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container text-on-surface text-body-sm bg-surface" placeholder="Search ShopDirect" type="text"/>
+<button class="bg-secondary text-on-secondary px-4 rounded-r h-10 hover:bg-secondary/90 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<button class="flex flex-col items-center group">
+<span class="material-symbols-outlined scale-95 active:opacity-80 transition-transform hover:text-secondary-fixed transition-colors duration-200">person</span>
+<span class="font-label-sm text-label-sm mt-1">Account</span>
+</button>
+<button class="flex flex-col items-center group relative">
+<span class="material-symbols-outlined scale-95 active:opacity-80 transition-transform hover:text-secondary-fixed transition-colors duration-200">shopping_cart</span>
+<span class="absolute -top-1 -right-2 bg-secondary text-on-secondary text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+<span class="font-label-sm text-label-sm mt-1">Cart</span>
+</button>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="flex items-center gap-6 py-2 overflow-x-auto no-scrollbar border-t border-outline-variant/30 mt-1">
+<a class="whitespace-nowrap text-on-primary/90 hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">menu</span> All
+                </a>
+<a class="whitespace-nowrap text-secondary-fixed font-bold border-b-2 border-secondary-fixed pb-1 font-label-md text-label-md" href="#">
+                    Today's Deals
+                </a>
+<a class="whitespace-nowrap text-on-primary/90 hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md pb-1" href="#">
+                    Customer Service
+                </a>
+<a class="whitespace-nowrap text-on-primary/90 hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md pb-1" href="#">
+                    Registry
+                </a>
+<a class="whitespace-nowrap text-on-primary/90 hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md pb-1" href="#">
+                    Gift Cards
+                </a>
+<a class="whitespace-nowrap text-on-primary/90 hover:text-secondary-fixed transition-colors duration-200 font-label-md text-label-md pb-1" href="#">
+                    Sell
+                </a>
+</nav>
+</div>
+</header>
+<main class="w-full pb-20">
+<!-- Hero Section -->
+<section class="relative w-full h-[400px] mb-32 md:mb-52">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Banner" class="w-full h-full object-cover object-top" data-alt="A wide, vibrant panoramic photograph of an expansive modern warehouse interior serving as a high-density e-commerce fulfillment center. Aisles of tall shelving stretch endlessly into the background, neatly stocked with diverse packaged products. The lighting is bright, even, and industrial, creating a clean and highly organized atmosphere. Subtle hints of deep dark green and bright orange safety accents dot the scene, establishing a strong structural and professional corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFNbRRwcHuyuAfcGoJFCnx-slT_fmb13dOWNnNAVgxrwQ4PXfWFdNcr16ln56bkmjSQYSNZD8_c56yaLxRLHjdShUAjrvySMXK9snZ_QBN31hCfDjOBazhz8nG51upO0ac9wgFRUn1EHPQhz0RegFCD1dT5-4slGjYN1t9k1aV9VtkWQC6vh1WtwBojw7hVyae4nqL3KIa5_3tc6-U70Il6GcpR_kds16YbtiKT7UzSZi42BFDE4T0Yjsh3vd7YY2eLoRY0tM3_OI"/>
+<div class="absolute inset-0 bg-hero-gradient z-10"></div>
+</div>
+<!-- Floating Widget Cards -->
+<div class="relative z-20 max-w-container-max mx-auto px-margin-desktop h-full pt-32">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Widget 1 -->
+<div class="bg-surface rounded-lg shadow-md p-4 flex flex-col h-[420px]">
+<h2 class="font-headline-sm text-headline-sm mb-4">Continue shopping</h2>
+<div class="grid grid-cols-2 gap-2 flex-1">
+<div class="flex flex-col gap-1">
+<img alt="Watch" class="w-full aspect-square object-cover rounded bg-surface-dim" data-alt="A clean, minimalist product shot of a sleek modern smartwatch with a dark screen and a subtle gray band. The watch rests on a pristine white surface under soft, diffused high-key studio lighting. The background is purely white to ensure the product stands out sharply, emphasizing modern design and high-tech elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOMmXM4Ky-bZoU7sSXGBAUNSZkmtZJvinLbCpxWtE-fSCgaQs9-ZmorYrWbOzfFCYbAPNk2fnLr6wT-dGFWA6EIYCsCClC3ZfkPF23Nq0Y7BpUbkbKxMM5du_K2i6auDf_vjEA2NWaYnz1kgUE1ILsKgW5aNeXLRqq62Ic86pCja2-_6vLI70W_UKMrFBnS3uZcztbj89KAV9H0cC6zONJ5xdIs79y99RmplCi94SKHr_dd1Yd0Iy8M-O-acRtYN4OladNRkVVLp0"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-ellipsis-2">Smart Watches</span>
+</div>
+<div class="flex flex-col gap-1">
+<img alt="Headphones" class="w-full aspect-square object-cover rounded bg-surface-dim" data-alt="A high-quality product image of premium over-ear headphones in a matte dark finish. They are positioned at a slight angle on a bright, seamless white backdrop. The lighting is soft but directional, highlighting the textured earcups and the smooth headband, conveying a sense of premium audio equipment in a clean e-commerce setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ompRo_sKq-GRxc-nUcmJhskn3BosJq-M0u11qCrR3heBtkKo80REUUvgvDlOnADJHmvdJLY3-HFQsQ1Cj3DsEh8NmVlsCI8bKBfV1YA_0c8nUVLd9gDOtkREScHA53TLlpaqZl0MyUlXgRq55GMAoSumhmC3DjC-Hpy7DHSnpPBIXsqZKyVEvRxVx1FCQt77pTSILggYAWpjgpzYSTCJoWZikSdvCw8Xg8sw4gUCbsx7PEsxChULeG7kXxTqMUTQ9qbE7WmQiVw"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-ellipsis-2">Audio Gear</span>
+</div>
+<div class="flex flex-col gap-1">
+<img alt="Shoes" class="w-full aspect-square object-cover rounded bg-surface-dim" data-alt="A dynamic, brightly lit product photograph of a vibrant red running shoe. The shoe is presented on a clean white background with subtle ambient shadowing underneath to ground it. The intricate details of the mesh fabric and the thick white sole are crisply in focus, projecting a sporty and energetic vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACvsa4yoBWaxzTL1KVsou5GziqzIwdPFOKqobfkccfG-9qdtNl_oC53lIBLOEyu0Mz4Q3XO2XPJu7VUNwb6LAbPjDxMmcbnvsNP4vLYwGWDnOkw3lr2aPjxH-9vgy4SErxPwhFlfMCdW7ZXAT_s6ba8V3atmIV3clinOhepO6x_quSm9ZNK9YjDULE2wJ-OToJk0OQZipJG4yExmvypnRDlejkhJG_EROoBvALldE54dt-U1UtJt7Tdcld1sp10BfJG_ewaIOWQzk"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-ellipsis-2">Athletic Shoes</span>
+</div>
+<div class="flex flex-col gap-1">
+<img alt="Camera" class="w-full aspect-square object-cover rounded bg-surface-dim" data-alt="A sharp, well-lit product photo of a vintage-style instant camera with a classic black and silver design. It sits squarely on a stark white surface with minimal shadows. The lighting is uniform, highlighting the lens details and the retro body texture, perfect for a high-end online retail catalog." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDknqAjyD4yfRvcsGp5f6lv9DpoDVebzBXZ0FSgk60MOkhO1XlX7RL34rHqM_wmZ8IQxdmTRCWwEH7EmGIVpDupIhrYjwmBLsVhVBCOZG-FeE0ST_iiRNVaWd1DtTPm8bAaWBDGEGZV-5QlFY7FRa48Cs7CREN4-X4ytNb0Vjlr8rcxPsX4sAf9C6SGnxlZDHlksZ48d2SVp14oTA0HzxWXYPhEumaPZIrbW5Dy57hWHKmxIj2Pejf9AefZs3oct1-et13Hr7xMkyg"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-ellipsis-2">Photography</span>
+</div>
+</div>
+<a class="text-secondary font-label-md text-label-md mt-4 hover:underline" href="#">See all your history</a>
+</div>
+<!-- Widget 2 -->
+<div class="bg-surface rounded-lg shadow-md p-4 flex flex-col h-[420px] hidden md:flex">
+<h2 class="font-headline-sm text-headline-sm mb-4">Deals in Electronics</h2>
+<div class="flex-1">
+<img alt="Laptop Deal" class="w-full h-[280px] object-cover rounded bg-surface-dim" data-alt="A sleek, modern laptop positioned open on a clean desk environment. The screen displays a colorful abstract graphic. The lighting is bright and even, creating a professional and inviting workspace aesthetic. The overall tone highlights technological efficiency against a crisp, light-mode background with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4b7JD3KHLqKH_p56MQvYSZhcm-Ak7XfUiDHPfUfK4VoDRU2Q9B_KXuahGbSkMJ6j5r-vb01UYFY72WqcKJRQnnRPZtU-NBjFm2NMKs2PbIVe67VD3Jh8nBemH6aLnkNCztwzQJ4hLXmI-Mpp7CPS9Xha6LWvlx65aOCoWce3mX-9wMN2TGYDHmt6ZL10oJkSbaAukXpn46NpXcsUzktDm7r-oX14Uu1H_JpiFGVyy3bjL5Aq8hUVCMv25UQhWXKfTEMFXqAkLfqw"/>
+</div>
+<a class="text-secondary font-label-md text-label-md mt-4 hover:underline" href="#">Shop now</a>
+</div>
+<!-- Widget 3 -->
+<div class="bg-surface rounded-lg shadow-md p-4 flex flex-col h-[420px] hidden md:flex">
+<h2 class="font-headline-sm text-headline-sm mb-4">Local Deals near Naga</h2>
+<div class="flex-1 flex flex-col gap-3">
+<img alt="Local Coffee" class="w-full h-32 object-cover rounded bg-surface-dim" data-alt="A warm, inviting shot of a local artisanal coffee shop interior. Espresso machines gleam under warm pendant lighting. The atmosphere suggests premium local commerce with a blend of dark wood textures and bright accents, capturing the essence of small-scale business vibrancy in a crisp, modern photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNrF57QY9uhAu2H2sFmeXL5WyEns1SeNzs7RvLzbxD3qeRiBtFHjIiV_ZC5ilJR2lo8adiLQNSxJZI5oVdmm94ERK8lX1q7AOqpEDes-28O8CmN32-4hdvH1Q-tfmS2A1eRowymaBVOhCNJQ17kH-q20a2WzvDzb1EJvrXrO9VAjlyZejtlrLvxdFtS49EzKOckETHRmbWxlUaDiyCs2euET7GVbHUyr41hnyIBfhA_Cga8KuWuRPs1dktfKn0T5MVaNyBbzuLe_4"/>
+<div class="flex items-center gap-2">
+<span class="bg-error text-on-error font-bold px-2 py-1 text-xs rounded-sm">20% off</span>
+<span class="text-error font-bold text-sm">Limited time deal</span>
+</div>
+<span class="font-body-sm text-body-sm text-ellipsis-2">Artisan Coffee Beans - Freshly roasted in Naga City. Premium Arabica blend.</span>
+</div>
+<a class="text-secondary font-label-md text-label-md mt-4 hover:underline" href="#">See all local deals</a>
+</div>
+<!-- Widget 4 -->
+<div class="bg-surface rounded-lg shadow-md p-4 flex flex-col h-[420px] hidden md:flex">
+<h2 class="font-headline-sm text-headline-sm mb-4">Sign in for the best experience</h2>
+<button class="w-full bg-[#FFD814] text-on-surface font-body-sm py-2 rounded-full border border-[#FCD200] hover:bg-[#F7CA00] shadow-[0_2px_5px_rgba(213,217,217,0.5)] mb-2 transition-colors">
+                            Sign in securely
+                        </button>
+<div class="flex-1 mt-6">
+<img alt="Promotional Graphic" class="w-full h-[180px] object-cover rounded bg-surface-dim" data-alt="A stylized, illustrative photograph showing shopping bags and wrapped gift boxes against a bright, cheerful background. The colors are vibrant, featuring deep greens and bright orange accents, evoking a sense of excitement and promotional value typical of high-energy e-commerce sales events." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPCPhYQ2nTgI9vDFXeK6WKGFNSgNP_Lk0OeKHHHqEfVdgNAD2zLtKQyoSOZG8EYn15bU6UDglcxLpmNVCGYmRmLDBesMQRdXrbwdUw16EYPsJs8YZMsZlP8AYiq_eeYmkM5LDofu5sGaZTlrWUkF-x_LI-ZfLLqncARA0ZMM8l402IAishYsQFeZKJRG4DCt_BHq5X3Fstd0N6zEA1Q_Q979IUNXobS7iL_FzotytyDoCCbHSX4nzgP_d7haU0p4_425Nk1QCY7LM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Carousel Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-12 bg-surface py-6 px-6 shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h2 class="font-headline-md text-headline-md">Trending Now</h2>
+<a class="text-secondary font-label-md text-label-md hover:underline" href="#">See more</a>
+</div>
+<div class="relative group">
+<!-- Left Nav -->
+<button class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-surface/90 border border-outline-variant shadow-md p-2 rounded-r opacity-0 group-hover:opacity-100 transition-opacity h-24 flex items-center justify-center hover:bg-surface" id="scrollLeft">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<!-- Carousel Container -->
+<div class="flex overflow-x-auto gap-gutter snap-x snap-mandatory no-scrollbar pb-4" id="productCarousel">
+<!-- Product Card 1 -->
+<div class="min-w-[240px] max-w-[240px] flex-shrink-0 snap-start bg-surface rounded-lg flex flex-col h-full border border-outline-variant/30 hover:border-outline-variant transition-colors group/card">
+<div class="relative bg-surface-dim aspect-square rounded-t-lg overflow-hidden flex items-center justify-center p-4">
+<img alt="Robot Vacuum" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover/card:scale-105" data-alt="A clean, studio-lit product shot of a modern robotic vacuum cleaner on a pure white background. The device is circular, sleek black, with minimal details. The lighting is high-key and even, creating a professional, pristine look suitable for a premium electronics catalog, emphasizing convenience and advanced technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBspTh_hRNF0W-z1QLsIvlUsHax-wwJhp-pGwQ1Uocelt-1lpDBdvEl0SFK3f9_Du40vGl70x7lgYrUDJRqVTN4aRrk12th_MIcL6TXeVGcITClPuvgdslokC8GXUibQ6PCupvhmEe3zfSGcNabiyTKGGrxpxNVlmU7TxtvNTIhksmTR3u0LlmRhIpyAmJDs5ckYKtIOKyButoFZDdr2uUsKA1-thBURTUcJRHms3sle2wE5ZX49E24rWgRsZ0xach8_T7g9IrLZwo"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<a class="font-body-md text-body-md text-ellipsis-2 hover:text-secondary mb-1" href="#">Advanced Robotic Vacuum Cleaner with AI Mapping and Auto-Empty Dock</a>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star_half</span>
+</div>
+<span class="text-on-surface-variant text-sm hover:underline cursor-pointer">12,453</span>
+</div>
+<div class="text-xs text-on-surface-variant mb-2 bg-surface-container-low inline-block px-2 py-0.5 rounded w-max">2k+ bought in past month</div>
+<div class="flex items-end gap-2 mb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface"><span class="text-sm align-top">₱</span>16,744<span class="text-sm align-top">00</span></span>
+<span class="text-sm text-on-surface-variant line-through mb-0.5">₱22,344.00</span>
+</div>
+<div class="text-error text-sm font-bold mb-3 flex items-center gap-1">
+                                Only 3 left in stock - order soon.
+                            </div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-secondary text-on-secondary font-label-md py-2 rounded-full hover:bg-secondary/90 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Add to Cart
+                                </button>
+<button class="w-full bg-[#FFA41C] text-on-surface font-label-md py-2 rounded-full hover:bg-[#FF9900] shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Buy Now
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="min-w-[240px] max-w-[240px] flex-shrink-0 snap-start bg-surface rounded-lg flex flex-col h-full border border-outline-variant/30 hover:border-outline-variant transition-colors group/card">
+<div class="relative bg-surface-dim aspect-square rounded-t-lg overflow-hidden flex items-center justify-center p-4">
+<span class="absolute top-2 left-2 bg-error text-on-error text-xs font-bold px-2 py-1 rounded-sm z-10">Save 15%</span>
+<img alt="Smartwatch" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover/card:scale-105" data-alt="A sophisticated product photograph of a modern smartwatch displayed on a crisp white background. The watch features a dark, reflective face and a sleek metallic band. It is lit evenly with soft studio lights to minimize harsh reflections while highlighting the premium materials, fitting a high-density modern e-commerce layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQN59QnNlUu8s9CzugmdA-fJy6s-TFICJAw0vyKVd7i9xQ3y4bJkKNr_ymg8lT-mnUrx4vMvdm0UAfviWUF5nYyQ9E3FxVPI15-FOZMk535kCvgN5RFKyXP0A17wpMoDPXbGACFtfzvMzfPnLSB25p8rSL5wkk0c-dmGGqnqaB6kRjeUx1EWyadY5QadnntRBPlCWGKW0nJKc4VxQCR60ee4I8si8V7HuLC-bLWLPw5y266ia_68eOREAvWr5Z3JmzGP41Wikwesc"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<a class="font-body-md text-body-md text-ellipsis-2 hover:text-secondary mb-1" href="#">Series 8 Smart Watch with Fitness Tracker and Heart Rate Monitor</a>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+</div>
+<span class="text-on-surface-variant text-sm hover:underline cursor-pointer">45,120</span>
+</div>
+<div class="text-xs text-on-surface-variant mb-2 bg-surface-container-low inline-block px-2 py-0.5 rounded w-max">10k+ bought in past month</div>
+<div class="flex items-end gap-2 mb-3">
+<span class="font-headline-sm text-headline-sm text-on-surface"><span class="text-sm align-top">₱</span>11,172<span class="text-sm align-top">00</span></span>
+<span class="text-sm text-on-surface-variant line-through mb-0.5">₱13,160.00</span>
+</div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-secondary text-on-secondary font-label-md py-2 rounded-full hover:bg-secondary/90 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Add to Cart
+                                </button>
+<button class="w-full bg-[#FFA41C] text-on-surface font-label-md py-2 rounded-full hover:bg-[#FF9900] shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Buy Now
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="min-w-[240px] max-w-[240px] flex-shrink-0 snap-start bg-surface rounded-lg flex flex-col h-full border border-outline-variant/30 hover:border-outline-variant transition-colors group/card">
+<div class="relative bg-surface-dim aspect-square rounded-t-lg overflow-hidden flex items-center justify-center p-4">
+<img alt="Earbuds" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover/card:scale-105" data-alt="A bright, clear product shot of a pair of high-end wireless earbuds in their charging case, set against a seamless white background. The earbuds are white, sleek, and modern. Subtle, soft shadows ground the product. The lighting emphasizes the smooth plastic texture and minimalist design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpvy156k0Nq6pFXodgqBNLn0rOonlR4w9Bx5lEZvCu6LYByNhB3Lvj1auKFv4cA0uOtXahOnA9oFEzHcLtNOIz_LMCayZ3m0mEmX6BxezYQdR_WPNb8W7CtGU_tcaWI-mBdKlUsuvQIwSWdrMQ8q8Gc_qh4UyvHm9IsA7rVl85vuGOIz_30rYZ1ECq2Dhw3yvCF7ryEzG9W10oIZGJDaO9x2HN-YZBx2TQhuaCkX-LGWnS2npMEyH899CEELeTRfXsP4-LORwuY2Y"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<a class="font-body-md text-body-md text-ellipsis-2 hover:text-secondary mb-1" href="#">Pro Wireless Earbuds with Active Noise Cancelling</a>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined text-[16px]">star_border</span>
+</div>
+<span class="text-on-surface-variant text-sm hover:underline cursor-pointer">8,902</span>
+</div>
+<div class="text-xs text-on-surface-variant mb-2 bg-surface-container-low inline-block px-2 py-0.5 rounded w-max">5k+ bought in past month</div>
+<div class="flex items-end gap-2 mb-3">
+<span class="font-headline-sm text-headline-sm text-on-surface"><span class="text-sm align-top">₱</span>7,279<span class="text-sm align-top">44</span></span>
+</div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-secondary text-on-secondary font-label-md py-2 rounded-full hover:bg-secondary/90 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Add to Cart
+                                </button>
+<button class="w-full bg-[#FFA41C] text-on-surface font-label-md py-2 rounded-full hover:bg-[#FF9900] shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Buy Now
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="min-w-[240px] max-w-[240px] flex-shrink-0 snap-start bg-surface rounded-lg flex flex-col h-full border border-outline-variant/30 hover:border-outline-variant transition-colors group/card">
+<div class="relative bg-surface-dim aspect-square rounded-t-lg overflow-hidden flex items-center justify-center p-4">
+<span class="absolute top-2 left-2 bg-error text-on-error text-xs font-bold px-2 py-1 rounded-sm z-10">Deal</span>
+<img alt="Laptop" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover/card:scale-105" data-alt="A pristine product photograph of a modern, thin laptop shown slightly open to reveal the keyboard and screen edge. The background is pure white. High-key lighting eliminates harsh shadows and emphasizes the sleek, metallic finish and minimalist design of the computer, ideal for an electronic store listing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp9_D5P9M4Ubep6isiMDktgQtieJMhzJPrp1f9-FwJiRmBYL3-uFief5qMrOCohvvovgzhuq2sQOKeUj_Tv_E_3mm9r6nbyqt2TRz-BrrWWsRj7n8w3nvemViLcLs4jKRw1tuos9cg6fjHqn0aLzDGihlpzgZzOJ2qtj7Rz8t20MHUeY7NDkJ-aLNycrabrY0-mhUgQueR5SVCUj-wCwcg_nOEE3D9reXHSTEcL-JegTfqZJkYmXCzsvqRe4E5P9pzvS9g5xaAFac"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<a class="font-body-md text-body-md text-ellipsis-2 hover:text-secondary mb-1" href="#">Ultra-Slim 14" Laptop, 16GB RAM, 512GB SSD, Silver</a>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star_half</span>
+</div>
+<span class="text-on-surface-variant text-sm hover:underline cursor-pointer">3,124</span>
+</div>
+<div class="text-xs text-on-surface-variant mb-2 bg-surface-container-low inline-block px-2 py-0.5 rounded w-max">1k+ bought in past month</div>
+<div class="flex items-end gap-2 mb-1">
+<span class="font-headline-sm text-headline-sm text-on-surface"><span class="text-sm align-top">₱</span>50,344<span class="text-sm align-top">00</span></span>
+<span class="text-sm text-on-surface-variant line-through mb-0.5">₱61,544.00</span>
+</div>
+<div class="text-error text-sm font-bold mb-3 flex items-center gap-1">
+                                Only 1 left in stock - order soon.
+                            </div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-secondary text-on-secondary font-label-md py-2 rounded-full hover:bg-secondary/90 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Add to Cart
+                                </button>
+<button class="w-full bg-[#FFA41C] text-on-surface font-label-md py-2 rounded-full hover:bg-[#FF9900] shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Buy Now
+                                </button>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="min-w-[240px] max-w-[240px] flex-shrink-0 snap-start bg-surface rounded-lg flex flex-col h-full border border-outline-variant/30 hover:border-outline-variant transition-colors group/card">
+<div class="relative bg-surface-dim aspect-square rounded-t-lg overflow-hidden flex items-center justify-center p-4">
+<img alt="Digital Camera" class="w-full h-full object-contain mix-blend-multiply transition-transform duration-300 group-hover/card:scale-105" data-alt="A clean, minimalist product image of a high-end digital camera body with lens attached, placed securely against a seamless white backdrop. The lighting is precise, highlighting the textured grip and technical dials of the camera. The image communicates professional photography gear in a modern e-commerce context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsm_oS7qBNcXPl88tas7aq67_wxZz9Bd5OsCYruWW_FznORflsg4veTVUArbCJSj_dy_nWU1H4TlTEyY1arvzVOPbTZNScCsklhfJFJRWNVyA9gtQ-omhDlEzZeRnnze82I3NlSFDm0T8WAo3udYRtQ604Xt5jnj-EGTcGlquxaRKpaBzs0rKB7kVPy56sCAYAiYCCxtvtKgDGzEvUNPYD0iMO3ANL-bdLs8XFNbhEB-OSWOdRG6hvekCmmujO9uTX7uQIJp_680I"/>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<a class="font-body-md text-body-md text-ellipsis-2 hover:text-secondary mb-1" href="#">Mirrorless Digital Camera with 24-70mm f/4 Lens Kit</a>
+<div class="flex items-center gap-1 mb-1">
+<div class="flex text-secondary text-[14px]">
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+<span class="material-symbols-outlined filled text-[16px]">star</span>
+</div>
+<span class="text-on-surface-variant text-sm hover:underline cursor-pointer">1,845</span>
+</div>
+<div class="text-xs text-on-surface-variant mb-2 bg-surface-container-low inline-block px-2 py-0.5 rounded w-max">500+ bought in past month</div>
+<div class="flex items-end gap-2 mb-3">
+<span class="font-headline-sm text-headline-sm text-on-surface"><span class="text-sm align-top">₱</span>72,744<span class="text-sm align-top">00</span></span>
+</div>
+<div class="mt-auto flex flex-col gap-2">
+<button class="w-full bg-secondary text-on-secondary font-label-md py-2 rounded-full hover:bg-secondary/90 shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Add to Cart
+                                </button>
+<button class="w-full bg-[#FFA41C] text-on-surface font-label-md py-2 rounded-full hover:bg-[#FF9900] shadow-[0_2px_5px_rgba(0,0,0,0.1)] transition-transform active:scale-[0.98]">
+                                    Buy Now
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Nav -->
+<button class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-surface/90 border border-outline-variant shadow-md p-2 rounded-l opacity-0 group-hover:opacity-100 transition-opacity h-24 flex items-center justify-center hover:bg-surface" id="scrollRight">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container border-t border-outline-variant mt-auto">
+<div class="flex flex-col items-center py-margin-desktop w-full px-margin-desktop max-w-container-max mx-auto">
+<div class="text-headline-sm font-headline-sm text-on-primary mb-6">ShopDirect</div>
+<div class="flex flex-wrap justify-center gap-6 mb-6">
+<a class="font-label-sm text-label-sm text-on-primary/80 hover:underline hover:text-on-primary transition-colors opacity-90 hover:opacity-100" href="#">Conditions of Use</a>
+<a class="font-label-sm text-label-sm text-on-primary/80 hover:underline hover:text-on-primary transition-colors opacity-90 hover:opacity-100" href="#">Privacy Notice</a>
+<a class="font-label-sm text-label-sm text-on-primary/80 hover:underline hover:text-on-primary transition-colors opacity-90 hover:opacity-100" href="#">Your Ads Privacy Choices</a>
+<a class="font-label-sm text-label-sm text-on-primary/80 hover:underline hover:text-on-primary transition-colors opacity-90 hover:opacity-100" href="#">Help</a>
+<a class="font-label-sm text-label-sm text-on-primary/80 hover:underline hover:text-on-primary transition-colors opacity-90 hover:opacity-100" href="#">About Us</a>
+<a class="font-label-sm text-label-sm text-on-primary/80 hover:underline hover:text-on-primary transition-colors opacity-90 hover:opacity-100" href="#">Sustainability</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-primary/80">© 2026, ShopDirect.com, Inc. or its affiliates</div>
+</div>
+</footer>
+<script>
+        // Simple Carousel Scroll Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('productCarousel');
+            const leftBtn = document.getElementById('scrollLeft');
+            const rightBtn = document.getElementById('scrollRight');
+
+            if(carousel && leftBtn && rightBtn) {
+                const scrollAmount = 260 * 3; // roughly 3 cards
+
+                leftBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+
+                rightBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</body></html>
